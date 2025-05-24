@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - maliTECH</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      background-color: #f0f0f0;
+    }
+
+    .custom-navbar {
+      background-color: #3b97d3;
+    }
+
+    .custom-navbar .nav-link,
+    .custom-navbar .navbar-brand {
+      color: white !important;
+    }
+
+    .hero {
+      background-color: #e3f2fd;
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-weight: 700;
+      color: #333;
+    }
+
+    .about-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">maliTECH</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars text-white"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="Project.html">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- WhatsApp Button on the left side -->
+<style>
+  .whatsapp-button {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .whatsapp-button img {
+    width: 35px;
+    height: 35px;
+  }
+</style>
+
+<a href="https://wa.me/260975282913" target="_blank" class="whatsapp-button" aria-label="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon"/>
+</a>
+
+
+  <!-- Hero Section -->
+  <section class="hero text-center">
+    <div class="container">
+      <h1 class="section-title">Who We Are</h1>
+      <p class="lead text-muted">Innovative. Reliable. Local.</p>
+    </div>
+  </section>
+
+  <!-- About Us Content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="about-content">
+        <h2 class="mb-3">About maliTECH</h2>
+        <p>
+          maliTECH is a technology solutions company based in Lusaka, Zambia, focused on building modern digital experiences tailored for the Zambian and African market.
+          We specialize in website development, mobile app interfaces, e-commerce platforms, and branding solutions for businesses of all sizes.
+        </p>
+
+        <p>
+          Our mission is to empower local businesses and startups through affordable, professional, and scalable tech solutions.
+          With a team of skilled developers, designers, and marketers, maliTECH strives to bridge the digital gap across sectors through innovation.
+        </p>
+
+        <h4 class="mt-4">Our Values</h4>
+        <ul>
+          <li><strong>Innovation:</strong> We bring creative ideas to life.</li>
+          <li><strong>Integrity:</strong> We deliver what we promise.</li>
+          <li><strong>Customer-Centric:</strong> We design with users in mind.</li>
+        </ul>
+
+        <h4 class="mt-4">Technologies We Use</h4>
+        <p>HTML, CSS, JavaScript, Bootstrap, React, PHP, Laravel, Firebase, WordPress, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color: #3b97d3;" class="text-white py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <p class="mb-0">&copy; <span id="currentYear"></span> maliTECH. All rights reserved.</p>
+      </div>
+      <div>
+        <a href="https://facebook.com/yourpage" target="_blank" class="text-white me-4" aria-label="Facebook">
+          <i class="fab fa-facebook-f fa-lg"></i>
+        </a>
+        <a href="https://www.tiktok.com/@yourprofile" target="_blank" class="text-white me-4" aria-label="TikTok">
+          <i class="fab fa-tiktok fa-lg"></i>
+        </a>
+        <a href="https://wa.me/0975282913" target="_blank" class="text-white" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

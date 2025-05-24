@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>maliTECH</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>maliTECH Home</title>
+  
+  <!-- Bootstrap & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     .custom-navbar {
       background-color: #3b97d3;
@@ -14,28 +17,57 @@
     .custom-navbar .navbar-brand {
       color: white !important;
     }
-
-    .hero-section {
-      padding: 60px 0;
-      background-color: #f8f9fa;
+   body {
+    background-color: #f0f0f0;
+  }
+    .custom-navbar {
+      background-color: #3b97d3;
     }
-
-    .hero-img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
+    .custom-navbar .nav-link,
+    .custom-navbar .navbar-brand {
+      color: white !important;
     }
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Short horizontal height */
+  overflow: hidden;
+}
 
-    .hero-text h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
+.hero-img-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .hero-text p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #555;
-    }
+.hero-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.animated-title .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+.animated-title .word:nth-child(1) { animation-delay: 0.2s; }
+.animated-title .word:nth-child(2) { animation-delay: 0.6s; }
+.animated-title .word:nth-child(3) { animation-delay: 1s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
     .btn-custom {
       background-color: #3b97d3;
@@ -82,6 +114,22 @@
       color: #555;
       font-size: 1rem;
     }
+    @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-box {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
     .project-img {
       width: 100px;
       height: 100px;
@@ -117,84 +165,80 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Project</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+       <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <img src="images/hero.jpg" alt="Hero Image" class="hero-img">
-        </div>
-        <div class="col-md-6 hero-text">
-          <h1>Welcome to Malitech</h1>
-          <p>Building the future with tech.</p>
-          <a href="#projects" class="btn btn-custom">View Our Work</a>
-        </div>
-      </div>
+<!-- HERO SECTION -->
+<section class="hero-section position-relative">
+  <img src="images/hero.jpg" alt="Hero Image" class="hero-img-background">
+  <div class="hero-text-overlay">
+    <h1 class="animated-title">
+      <span class="word" style="color: #ff4c4c">Welcome</span>
+      <span class="word" style="color: #4caf50">to</span>
+      <span class="word" style="color: #2196f3">Malidea</span>
+    </h1>
+    <p>Building the future with tech.</p>
+    <a href="#projects" class="btn btn-custom">View Our Work</a>
+  </div>
+</section>
+
+
+<!-- ABOUT US SECTION -->
+<section id="about" class="about-section"style="background-color: #e3f2fd;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>What We Do</h2>
+      <p>We offer a range of services to help you grow with technology.</p>
     </div>
-  </section>
-
-  <!-- ABOUT US SECTION -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2>What We Do</h2>
-        <p>We offer a range of services to help you grow with technology.</p>
-      </div>
-      <div class="row g-4">
-     
-        <div class="col-md-6 col-lg-3">
-          <div class="about-box">
-            <div class="about-icon"><i class="fas fa-paint-brush"></i></div>
-            <div class="about-title">Graphic Design</div>
-            <div class="about-text">We design logos, flyers, business cards, and more creative visuals tailored to your brand.</div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="about-box">
-            <div class="about-icon"><i class="fas fa-code"></i></div>
-            <div class="about-title">Web & App Dev</div>
-            <div class="about-text">We develop responsive websites, mobile apps, and custom platforms for your business needs.</div>
-          </div>
-        </div>
-
-   
-        <div class="col-md-6 col-lg-3">
-          <div class="about-box">
-            <div class="about-icon"><i class="fas fa-laptop-code"></i></div>
-            <div class="about-title">Software</div>
-            <div class="about-text">We build custom software systems, tools, and management solutions tailored to your operations.</div>
-          </div>
-        </div>
-
-        <!-- Social Media Management -->
-        <div class="col-md-6 col-lg-3">
-          <div class="about-box">
-            <div class="about-icon"><i class="fas fa-bullhorn"></i></div>
-            <div class="about-title">Social Media</div>
-            <div class="about-text">We manage and grow your social media presence with content, strategy, and engagement campaigns.</div>
-          </div>
+    <div class="row g-4">
+    
+      <div class="col-md-6 col-lg-3">
+        <div class="about-box animate-box" style="animation-delay: 0s;">
+          <div class="about-icon"><i class="fas fa-paint-brush"></i></div>
+          <div class="about-title">Graphic Design</div>
+          <div class="about-text">We design logos, flyers, business cards, and more creative visuals tailored to your brand.</div>
         </div>
       </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="about-box animate-box" style="animation-delay: 0.5s;">
+          <div class="about-icon"><i class="fas fa-code"></i></div>
+          <div class="about-title">Web & App Dev</div>
+          <div class="about-text">We develop responsive websites, mobile apps, and custom platforms for your business needs.</div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="about-box animate-box" style="animation-delay: 1s;">
+          <div class="about-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="about-title">Software</div>
+          <div class="about-text">We build custom software systems, tools, and management solutions tailored to your operations.</div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="about-box animate-box" style="animation-delay: 1.5s;">
+          <div class="about-icon"><i class="fas fa-bullhorn"></i></div>
+          <div class="about-title">Social Media</div>
+          <div class="about-text">We manage and grow your social media presence with content, strategy, and engagement campaigns.</div>
+        </div>
+      </div>
+
     </div>
-  </section>
-
-
+  </div>
+</section>
 
 
 
 <!-- PROJECTS SECTION -->
-<section id="projects" class="py-5" style="background-color: #f0f4f8;">
+<section id="projects" class="py-5 bg-light"style="background-color: #e3f2fd;">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold">Our Projects</h2>
@@ -202,54 +246,426 @@
     </div>
 
     <div class="row g-4 justify-content-center">
-     
-      <div class="col-md-4">
-        <div class="d-flex bg-white shadow rounded-4 overflow-hidden">
-          <img src="images/Project 1.jpg" alt="e-Commerce" class="project-img">
-          <div class="p-3">
-            <h5 class="fw-bold">e-Commerce Website</h5>
-            <p class="text-muted">A modern online store with secure payments.</p>
+      
+      <!-- Project 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow border-0 animate-fade-up" style="animation-delay: 0s;">
+          <img src="images/Project 1.jpg" class="card-img-top" alt="e-Commerce">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">e-Commerce Website</h5>
+            <p class="card-text text-muted">A modern online store with secure payments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow border-0 animate-fade-up" style="animation-delay: 0.5s;">
+          <img src="images/Project 2.jpg" class="card-img-top" alt="App Design">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Mobile App Design</h5>
+            <p class="card-text text-muted">User-friendly mobile app for smooth and fast experience.</p>
           </div>
         </div>
       </div>
 
 
-      <div class="col-md-4">
-        <div class="d-flex bg-white shadow rounded-4 overflow-hidden">
-          <img src="images/Project 2.jpg" alt="App Design" class="project-img">
-          <div class="p-3">
-            <h5 class="fw-bold">Mobile App Design</h5>
-            <p class="text-muted">User-friendly mobile app for smooth and fast experience.</p>
+      
+      <!-- Project 3 -->
+      <div class="col-md-6 col-lg-4"style="background-color: #e3f2fd;">
+        <div class="card shadow border-0 animate-fade-up" style="animation-delay: 1s;">
+          <img src="images/Project 3.jpg" class="card-img-top" alt="Portfolio">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Business Portfolio</h5>
+            <p class="card-text text-muted">Elegant business site tailored for brand storytelling.</p>
           </div>
         </div>
       </div>
-
-    
-      <div class="col-md-4">
-        <div class="d-flex bg-white shadow rounded-4 overflow-hidden">
-          <img src="images/Project 3.jpg" alt="Portfolio" class="project-img">
-          <div class="p-3">
-            <h5 class="fw-bold">Business Portfolio</h5>
-            <p class="text-muted">Elegant business site tailored for brand storytelling.</p>
+    </div>
+      <!-- Project 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow border-0 animate-fade-up" style="animation-delay: 1s;">
+          <img src="images/Project 3.jpg" class="card-img-top" alt="Portfolio">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Business Portfolio</h5>
+            <p class="card-text text-muted">Elegant business site tailored for brand storytelling.</p>
           </div>
         </div>
       </div>
     </div>
 
-
     <div class="text-center mt-5">
-      <a href="#contact" class="btn btn-custom px-4 py-2">View Our Work</a>
+      <a href="#contact" class="btn btn-primary px-4 py-2">View Our Work</a>
     </div>
   </div>
 </section>
 
 
 
+<!-- WhatsApp Button on the left side -->
+<style>
+  .whatsapp-button {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .whatsapp-button img {
+    width: 35px;
+    height: 35px;
+  }
+</style>
+
+<a href="https://wa.me/260975282913" target="_blank" class="whatsapp-button" aria-label="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon"/>
+</a>
+
+
+
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="py-5 bg-white"style="background-color: #e3f2fd;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What Our Clients Say</h2>
+      <p class="text-muted">Real feedback from people we’ve worked with.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Testimonial 1 -->
+      <div class="col-md-6">
+        <div class="testimonial-box p-4 shadow rounded-4 animate-box" style="animation-delay: 0s;">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/tss.jpg" alt="Client 1" class="rounded-circle me-3" width="60" height="60">
+            <div>
+              <h5 class="mb-0">Amina D</h5>
+              <small class="text-muted">CEO, GreenTech</small>
+            </div>
+          </div>
+          <p class="text-muted mb-3">“Working with maliTECH was a game-changer. Their creativity, speed, and support are unmatched!”</p>
+          <div class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-6">
+        <div class="testimonial-box p-4 shadow rounded-4 animate-box" style="animation-delay: 1s;">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/tsss4.jpg" alt="Client 2" class="rounded-circle me-3" width="60" height="60">
+            <div>
+              <h5 class="mb-0">Koné</h5>
+              <small class="text-muted">Founder, K-Tech</small>
+            </div>
+          </div>
+          <p class="text-muted mb-3">“Their software solution improved our workflow drastically. Reliable, friendly, and professional.”</p>
+          <div class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="accordion" id="faqAccordion">
+  <!-- FAQ Item 1 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeadingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+        What services do you offer?
+      </button>
+    </h2>
+    <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        We offer graphic design, web & app development, software solutions, and social media management tailored to your needs.
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Item 2 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeadingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+        How can I contact your team?
+      </button>
+    </h2>
+    <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        You can reach us via the contact form on our website, email, or social media platforms. Visit the Contact Us section for details.
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Item 3 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeadingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+        What is the typical project timeline?
+      </button>
+    </h2>
+    <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Project timelines vary depending on the scope, but typically range from 2 to 12 weeks. We discuss timelines during the initial consultation.
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Item 4 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeadingFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+        Do you offer post-launch support?
+      </button>
+    </h2>
+    <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Yes! We provide ongoing maintenance, updates, and support packages to keep your projects running smoothly.
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Item 5 - CEO's Vision -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeadingFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+        View the CEO's Vision
+      </button>
+    </h2>
+    <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        Thanking God for the journey so far, our CEO believes we will become one of the tech giants in Africa and the world at large through innovation, dedication, and commitment to excellence.
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Item 6 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeadingSix">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
+        What technologies do you specialize in?
+      </button>
+    </h2>
+    <div id="faqCollapseSix" class="accordion-collapse collapse" aria-labelledby="faqHeadingSix" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        We specialize in modern web technologies such as React, Angular, Node.js, as well as mobile development with Flutter and native Android/iOS.
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Item 7 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="faqHeadingSeven">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseSeven" aria-expanded="false" aria-controls="faqCollapseSeven">
+        How do you ensure project quality?
+      </button>
+    </h2>
+    <div id="faqCollapseSeven" class="accordion-collapse collapse" aria-labelledby="faqHeadingSeven" data-bs-parent="#faqAccordion">
+      <div class="accordion-body">
+        We follow industry best practices including rigorous testing, code reviews, and client feedback loops to ensure top-quality deliverables.
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- MEET OUR TEAM SECTION -->
+<section id="team" class="py-5" style="background-color: #e3f2fd;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Meet Our Team</h2>
+      <p class="text-muted">The creative minds behind Malitech.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Team Member 1 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card border-0 shadow-sm rounded-4 text-center p-3">
+          <img src="images/mn (1).jpg" alt="Madura Ngoma" class="rounded-circle mx-auto d-block mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">Madura Ngoma</h5>
+          <p class="text-muted mb-3">CEO & Senior Developer</p>
+          <div>
+            <a href="#" class="text-primary mx-2 fs-5"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-success mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Team Member 3 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card border-0 shadow-sm rounded-4 text-center p-3">
+          <img src="images/ggm.jpg" alt="Gilbert Nglube" class="rounded-circle mx-auto d-block mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">Gilbert Nglube</h5>
+          <p class="text-muted mb-3">Graphic Designer</p>
+          <div>
+            <a href="#" class="text-primary mx-2 fs-5"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-success mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card border-0 shadow-sm rounded-4 text-center p-3">
+          <img src="images/busiku.jfif" alt="Busiku Kapikanya" class="rounded-circle mx-auto d-block mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">Busiku Kapikanya</h5>
+          <p class="text-muted mb-3">Project Manager</p>
+          <div>
+            <a href="#" class="text-primary mx-2 fs-5"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-success mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 5 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card border-0 shadow-sm rounded-4 text-center p-3">
+          <img src="images/SN.jpg" alt="Saliya Ngoma" class="rounded-circle mx-auto d-block mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">Saliya Ngoma</h5>
+          <p class="text-muted mb-3">Accountant</p>
+          <div>
+            <a href="#" class="text-primary mx-2 fs-5"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-success mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 6 -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card border-0 shadow-sm rounded-4 text-center p-3">
+          <img src="images/em.jpg" alt="Ephron Maunga" class="rounded-circle mx-auto d-block mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+          <h5 class="fw-bold mb-1">Ephron Maunga</h5>
+          <p class="text-muted mb-3">Marketing Officer</p>
+          <div>
+            <a href="#" class="text-primary mx-2 fs-5"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-success mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISION OF THE CEO SECTION -->
+<section id="ceo-vision" class="py-5 bg-light"style="background-color: #e3f2fd;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Vision of the CEO</h2>
+      <p class="text-muted">Hear from the visionary leader guiding our journey.</p>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#visionContent" aria-expanded="false" aria-controls="visionContent">
+        View the CEO's Vision
+      </button>
+    </div>
+
+    <div class="collapse mt-4" id="visionContent">
+      <div class="card card-body shadow-sm">
+        <p>
+          First and foremost, I thank God for His guidance and blessings on this incredible journey. 
+          We envisions a future where technology bridges gaps, empowers communities, 
+          and drives sustainable innovation. At maliTECH, we are committed to transforming ideas into 
+          impactful solutions that enrich lives and foster global progress. I firmly believe that 
+          with dedication and faith, we will rise to become one of the leading tech giants in Africa 
+          and the world at large. Together, we aim to be pioneers of change, embracing creativity, integrity, and excellence in all we do.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMPLE CONTACT US FORM -->
+<section id="contact-us" class="py-5"style="background-color: #e3f2fd;">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Contact Us</h2>
+      <p class="text-muted">Send us your message — we’ll get back to you soon!</p>
+    </div>
+
+    <form id="contactForm" action="#" method="POST" novalidate>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+        <div class="invalid-feedback">Please enter your message.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+(() => {
+  'use strict'
+  const form = document.getElementById('contactForm')
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    form.classList.add('was-validated')
+  }, false)
+})()
+</script>
 
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Add Font Awesome CDN in your <head> if you haven't yet -->
+
+
+<!-- Add Font Awesome CDN in your <head> if you haven't yet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<!-- Footer Section -->
+<footer style="background-color: #3b97d3;" class="text-white py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <div class="mb-3 mb-md-0">
+      <p class="mb-0">&copy; <span id="currentYear"></span> maliTECH. All rights reserved.</p>
+    </div>
+    <div>
+      <a href="https://facebook.com/yourpage" target="_blank" class="text-white me-4" aria-label="Facebook">
+        <i class="fab fa-facebook-f fa-lg"></i>
+      </a>
+      <a href="https://www.tiktok.com/@yourprofile" target="_blank" class="text-white me-4" aria-label="TikTok">
+        <i class="fab fa-tiktok fa-lg"></i>
+      </a>
+      <a href="https://wa.me/0975282913" target="_blank" class="text-white" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript to dynamically set the year -->
+<script>
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
